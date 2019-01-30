@@ -10,67 +10,73 @@
 
 </head>
 <style>
-    .box1 {
-opacity: 0;
-        top: 100%;
+    .wbox{
+        opacity: 0;
+        top: 90%;
         animation-name: floatUp;
-        animation-duration: 5s;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+        margin:1px;
+    }
+    .box1 {
+
     }
     .box2 {
-        opacity: 0;
-        top: 100%;
-        animation-name: floatUp;
-        animation-duration: 2s;
-        animation-delay: 1s;
+       animation-delay: 2.5s;
     }
     .box3 {
-        opacity: 0;
-        top: 100%;
-        animation-name: floatUp;
-        animation-duration: 2s;
-        animation-delay: 2s;
+        animation-delay: 5s;
     }
     .box4 {
-        opacity: 0;
-        top: 100%;
-        animation-name: floatUp;
-        animation-duration: 2s;
-        animation-delay: 3s;
+      
+        animation-delay: 7.5s;
+    }
+    .box5 {
+        animation-delay: 10s;
     }
 
     @keyframes floatUp {
         0% {
             opacity: 0;
-            transform: translateY(0);
+            transform: translateY(200px);
         }
 
-        80% {
-            opacity: 1;
-            transform: translateY(-20px);
-        }
+      
 
         100% {
             opacity: 1;
             transform: translateY(0);
         }
     }
+    
+    h1{text-align:center;background-color:#303742;color:#f4f5f7 ;font-weight: 400}
+    #welcome-page{background-color: black}
 </style>
 
 <body>
     
     <body>
-        <button class="btn btn-primary btn-block box1">
+        <!-- WELCOME PAGE -->
+        <div id="welcome-page">
+        <h1>Yimikusasa</h1>
+            <button class="btn btn-error btn-block wbox box1">
+                    Struggling at School?&#x1f61f
+                   </button>
+        <button class="btn btn-primary btn-block wbox box2">
          Join Yimikusasa
         </button>
-        <button class="btn btn-primary btn-block box2">
+        <button class="btn btn-primary btn-block wbox box3">
          Ask your friends to join.
         </button>
-        <button class="btn btn-primary btn-block box3">
-         Discuss homework and exam papers
+        <button class="btn btn-primary btn-block wbox box4">
+         Discuss homework and exam papers online
         </button>
-        <button class="btn btn-primary btn-block box4">
-         Pass your exams with flying colours!
+        <button class="btn btn-success btn-block wbox box5">
+         Pass your exams with flying colours! &#x1f389 &#x1f388
         </button>
+        <br>
+        <button class="btn btn-lg  btn-block">Login</button>
+    </div>
     </body>
 
 </body>
