@@ -5,7 +5,19 @@ export const User = {
     school: "",
     grade: "",
     following: [],
-    followedby: [],
-    
-    
+    followedBy: [],
+    hasProfile:false      
+}
+
+export function resetUser() {
+    User = {
+        uid: null,
+        firstname: "",
+        surname: "",
+        school: "",
+        grade: "",
+        following: [],
+        followedBy: [],
+        hasProfile:false      
+    }
 }

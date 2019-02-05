@@ -15,7 +15,9 @@ export class FirebaseService{
         firebase.auth().onAuthStateChanged((data) => {
             if (data) {
                 User.uid = data.uid;
-
+                getUser().then((doc) => {
+                    if(doc.exists){}else{saveUser()}
+                })
             } else {
                 User.uid = null;
               console.log('Not logged in')
@@ -23,6 +25,11 @@ export class FirebaseService{
           });
     }
     static getUser() {
-        
-    }
+        const query = this.db.doc('users/' + User.uid);
+        return query.ref.get();
+      }
+     static  saveUser() {
+        const userDoc = this.db.doc('users/' + User.uid);
+        return userDoc.set(User);
+      }
 }
