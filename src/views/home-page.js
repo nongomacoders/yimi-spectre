@@ -1,4 +1,4 @@
-export function getView() {
+export function renderHomePage() {
     
 }
 
