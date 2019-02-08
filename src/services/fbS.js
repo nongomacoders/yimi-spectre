@@ -1,7 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
-import { FIREBASE_CONFIG } from './config';
+import { FIREBASE_CONFIG } from '../config';
 import { User,resetUser } from './userS'
 
 export class FirebaseService{
