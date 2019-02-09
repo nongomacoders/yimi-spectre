@@ -1,4 +1,4 @@
-export const User = {
+export var User = {
     uid: null,
     firstname: "",
     surname: "",

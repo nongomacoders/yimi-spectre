@@ -3,7 +3,7 @@
 const profilePage = document.getElementById("profile-page");
 
 export function renderProfilePage() {
-    profilePage.innerHTML =`
+  profilePage.innerHTML = `
     <div class="form-group">
         <label class="form-label" for="first-name">first name</label>
         <input class="form-input" type="text" id="first-name" placeholder="e.g ntombifuthi">
@@ -24,5 +24,6 @@ export function renderProfilePage() {
         <input class="form-input" type="text" id="school" placeholder="e.g king bhekuzulu highschool">
         <label class="form-label" for="postal-code">postal code of school</label>
         <input class="form-input" type="text" id="postal-code" placeholder="3950">
-      </div>`
+      </div>`;
+  profilePage.style.display = 'block';
 }

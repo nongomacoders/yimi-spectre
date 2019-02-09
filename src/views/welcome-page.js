@@ -19,7 +19,7 @@ export function renderWelcomePage(){
         Pass your exams with flying colours! &#x1f389 &#x1f388
     </button>
     <br>
-    <img src="./assets/g.png" alt="">
+    <a id="googleButton"><img src="./assets/g.png" alt=""></a>
     `;
     welcomePage.style.display='block';
 }
