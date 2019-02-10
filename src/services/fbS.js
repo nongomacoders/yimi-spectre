@@ -17,22 +17,33 @@ import {
   User,
   resetUser
 } from './userS'
+import {
+  showGoogleButton,
+  hideGoogleButton
+} from '../views/welcome-page'
 
 export class FirebaseService {
 
-  constructor() {}
+  constructor() { }
+  
   static isInitialised() {
+    this.isReady = sessionStorage.getItem('isReady');
+    console.log('this.isReady:', this.isReady);
+    this.isReady = JSON.parse(this.isReady) === true;
+    console.log('this.isReady:', this.isReady);
     return this.isReady;
   }
-  static init() {
-    this.isReady = false;
+
+  static initFB() {    
     firebase.initializeApp(FIREBASE_CONFIG);
     this.db = firebase.firestore();
-    this.db.enablePersistence();
-    this.isReady = true;
+    this.db.enablePersistence(); 
+        
   }
   static checkAuth() {
     var unsubscribe = firebase.auth().onAuthStateChanged((data) => {
+      sessionStorage.setItem('isReady', 'true');
+      unsubscribe();
       if (data) {
         resetUser();
         User.uid = data.uid;
@@ -40,12 +51,16 @@ export class FirebaseService {
           if (doc.exists) {
             Object.assign(User, doc.data())
           }
+          console.log('showGoogleButton:', 'logged in ');
+          showGoogleButton();
         });
-        unsubscribe();
       } else {
-        resetUser();
-        unsubscribe();
+        resetUser();        
+        console.log('showGoogleButton:', 'logged out');
+        showGoogleButton();
       }
+     
+
     });
   }
   static getUser() {
@@ -66,6 +81,7 @@ export class FirebaseService {
   }
 
   static afterRedirect() {
+    hideGoogleButton();
     console.log('afterREdirect');
     firebase.auth().getRedirectResult().then((result) => {
       console.log(`result = `);

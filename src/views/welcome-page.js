@@ -23,3 +23,12 @@ export function renderWelcomePage(){
     `;
     welcomePage.style.display='block';
 }
+
+export function hideGoogleButton() {
+    const googleButton = document.getElementById('googleButton');
+    if(googleButton)googleButton.style.display='none'
+}
+export function showGoogleButton() {
+    const googleButton = document.getElementById('googleButton');
+    if(googleButton)googleButton.style.display='block'
+}
