@@ -24,10 +24,11 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new CopyWebpackPlugin([
 
-      {from:'src/assets',to:'assets'} ,
-      {from:'src/index.html',to:'index.html'}
+      { from: 'src/assets', to: 'assets' },
+      { from: 'src/css' , to : 'css'}
+     
 
   ]), 
-    //new HtmlWebPackPlugin({template: './src/index.html'})
+    new HtmlWebPackPlugin({template: './src/index.html'})
   ]
 };

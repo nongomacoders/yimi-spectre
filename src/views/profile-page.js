@@ -5,6 +5,7 @@ const profilePage = document.getElementById("profile-page");
 export function renderProfilePage() {
   profilePage.innerHTML = `
     <div class="form-group">
+    <h1>Profile Page</h1>
         <label class="form-label" for="first-name">first name</label>
         <input class="form-input" type="text" id="first-name" placeholder="e.g ntombifuthi">
         <label class="form-label" for="surname">surname</label>
@@ -24,6 +25,8 @@ export function renderProfilePage() {
         <input class="form-input" type="text" id="school" placeholder="e.g king bhekuzulu highschool">
         <label class="form-label" for="postal-code">postal code of school</label>
         <input class="form-input" type="text" id="postal-code" placeholder="3950">
+        <br>
+        <button class="btn btn-primary id='profile-button'">Save</button>
       </div>`;
   profilePage.style.display = 'block';
 }

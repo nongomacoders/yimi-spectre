@@ -1,4 +1,22 @@
-const welcomePage=document.getElementById('welcome-page');
+import {
+    FirebaseService
+} from '../services/fbS';
+import {
+    hideAllPages
+} from '../services/pagesS';
+
+import {
+    renderHomePage
+} from './home-page';
+import {
+    renderProfilePage
+} from './profile-page'
+import {
+    User
+} from '../services/userS';
+
+
+const welcomePage = document.getElementById('welcome-page');
 
 export function renderWelcomePage(){
     welcomePage.innerHTML=`
@@ -19,16 +37,17 @@ export function renderWelcomePage(){
         Pass your exams with flying colours! &#x1f389 &#x1f388
     </button>
     <br>
-    <a id="googleButton"><img src="./assets/g.png" alt=""></a>
+    <a id="google-button"><img src="./assets/g.png" alt=""></a>
     `;
+    
     welcomePage.style.display='block';
 }
 
 export function hideGoogleButton() {
-    const googleButton = document.getElementById('googleButton');
+    const googleButton = document.getElementById('google-button');
     if(googleButton)googleButton.style.display='none'
 }
 export function showGoogleButton() {
-    const googleButton = document.getElementById('googleButton');
+    const googleButton = document.getElementById('google-button');
     if(googleButton)googleButton.style.display='block'
 }

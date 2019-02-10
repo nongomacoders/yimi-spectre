@@ -7,7 +7,7 @@ import {
 import {
     renderWelcomePage,
     hideGoogleButton,
-    showGoogleButton
+    addListener
 } from './views/welcome-page';
 import {
     renderHomePage
@@ -18,6 +18,7 @@ import {
 import {
     User
 } from './services/userS';
+
 
 
 
@@ -33,7 +34,8 @@ function init() {
    
     hideAllPages();
     renderWelcomePage();
-    document.getElementById("googleButton").addEventListener('click', signIn);
+    document.getElementById("google-button").addEventListener('click',() =>signIn());
+    
     hideGoogleButton();
     FirebaseService.initFB();
     if (!FirebaseService.isInitialised()) {       

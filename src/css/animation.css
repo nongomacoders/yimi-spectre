@@ -1,0 +1,49 @@
+
+    .wbox {
+        opacity: 0;
+        top: 90%;
+        animation-name: floatUp;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+        margin: 1px;
+    }
+    .box2 {
+        animation-delay: 2.5s;
+    }
+    .box3 {
+        animation-delay: 5s;
+    }
+    .box4 {
+
+        animation-delay: 7.5s;
+    }
+
+    .box5 {
+        animation-delay: 10s;
+    }
+
+    @keyframes floatUp {
+        0% {
+            opacity: 0;
+            transform: translateY(200px);
+        }
+
+
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    h1 {
+        text-align: center;
+        background-color: #303742;
+        color: #f4f5f7;
+        font-weight: 400
+    }
+
+    #welcome-page {
+        background-color: black
+    }
+
